@@ -23,7 +23,7 @@ export const COMPANY = {
     facebook: 'https://facebook.com/trinexus',
     linkedin: 'https://linkedin.com/company/trinexus',
   },
-  logoPath: 'assets/images/logo.svg',
+  logoPath: 'assets/images/logo.png',
   foundedYear: 2024,
   teamSize: 3,
 } as const;
