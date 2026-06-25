@@ -28,6 +28,47 @@ import { COMPANY } from '../../data/company.constants';
         <div class="hero__bg-shape"></div>
       </section>
 
+      <!-- Overview Cards -->
+      <section class="section section--alt" id="overview">
+        <div class="container">
+          <div class="grid grid--3">
+            <a routerLink="/services" class="overview-card">
+              <span class="overview-card__icon">⚡</span>
+              <h3>{{ lang.t('home.cards.services_title') }}</h3>
+              <p>{{ lang.t('home.cards.services_text') }}</p>
+              <span class="overview-card__link">{{ lang.t('home.cards.view') }} →</span>
+            </a>
+            <a routerLink="/products" class="overview-card">
+              <span class="overview-card__icon">📦</span>
+              <h3>{{ lang.t('home.cards.products_title') }}</h3>
+              <p>{{ lang.t('home.cards.products_text') }}</p>
+              <span class="overview-card__link">{{ lang.t('home.cards.view') }} →</span>
+            </a>
+            <a routerLink="/pricing" class="overview-card">
+              <span class="overview-card__icon">💰</span>
+              <h3>{{ lang.t('home.cards.pricing_title') }}</h3>
+              <p>{{ lang.t('home.cards.pricing_text') }}</p>
+              <span class="overview-card__link">{{ lang.t('home.cards.view') }} →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Free Demo Highlight -->
+      <section class="section demo-section" id="free-demo">
+        <div class="container">
+          <div class="demo-banner">
+            <div class="demo-banner__content">
+              <span class="demo-banner__icon">🎁</span>
+              <h2>{{ lang.t('home.demo.title') }}</h2>
+              <p>{{ lang.t('home.demo.text') }}</p>
+              <p class="demo-banner__conditions">{{ lang.t('home.demo.conditions') }}</p>
+              <a routerLink="/pricing" class="btn btn--gold">{{ lang.t('home.demo.learn_more') }}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Who We Are -->
       <section class="section section--alt" id="who-we-are">
         <div class="container">
@@ -53,47 +94,14 @@ import { COMPANY } from '../../data/company.constants';
               <span class="who__icon">💊</span>
               <span>{{ lang.isBangla() ? 'ফার্মেসি' : 'Pharmacies' }}</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Free Demo Highlight -->
-      <section class="section demo-section" id="free-demo">
-        <div class="container">
-          <div class="demo-banner">
-            <div class="demo-banner__content">
-              <span class="demo-banner__icon">🎁</span>
-              <h2>{{ lang.t('home.demo.title') }}</h2>
-              <p>{{ lang.t('home.demo.text') }}</p>
-              <p class="demo-banner__conditions">{{ lang.t('home.demo.conditions') }}</p>
-              <a routerLink="/pricing" class="btn btn--gold">{{ lang.t('home.demo.learn_more') }}</a>
+            <div class="who__icon-item">
+              <span class="who__icon">🏛️</span>
+              <span>{{ lang.isBangla() ? 'এনজিও' : 'NGOs' }}</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Overview Cards -->
-      <section class="section section--alt" id="overview">
-        <div class="container">
-          <div class="grid grid--3">
-            <a routerLink="/services" class="overview-card">
-              <span class="overview-card__icon">⚡</span>
-              <h3>{{ lang.t('home.cards.services_title') }}</h3>
-              <p>{{ lang.t('home.cards.services_text') }}</p>
-              <span class="overview-card__link">{{ lang.t('home.cards.view') }} →</span>
-            </a>
-            <a routerLink="/products" class="overview-card">
-              <span class="overview-card__icon">📦</span>
-              <h3>{{ lang.t('home.cards.products_title') }}</h3>
-              <p>{{ lang.t('home.cards.products_text') }}</p>
-              <span class="overview-card__link">{{ lang.t('home.cards.view') }} →</span>
-            </a>
-            <a routerLink="/pricing" class="overview-card">
-              <span class="overview-card__icon">💰</span>
-              <h3>{{ lang.t('home.cards.pricing_title') }}</h3>
-              <p>{{ lang.t('home.cards.pricing_text') }}</p>
-              <span class="overview-card__link">{{ lang.t('home.cards.view') }} →</span>
-            </a>
+            <div class="who__icon-item">
+              <span class="who__icon">🛒</span>
+              <span>{{ lang.isBangla() ? 'ই-কমার্স' : 'E-commerce' }}</span>
+            </div>
           </div>
         </div>
       </section>

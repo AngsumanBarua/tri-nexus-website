@@ -75,7 +75,8 @@
   --container-padding: var(--space-md);
 
   /* Font */
-  --font-family: 'Hind Siliguri', sans-serif;
+  --font-family: 'Inter', 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+  --font-family-bangla: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
 }
 
 /* --- Reset & Base --- */

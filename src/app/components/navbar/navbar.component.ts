@@ -31,8 +31,12 @@ import { COMPANY } from '../../data/company.constants';
         </div>
 
         <div class="navbar__actions">
-          <button class="navbar__lang-btn" (click)="lang.toggle()" [attr.aria-label]="'Switch language'">
-            {{ lang.t('nav.lang_toggle') }}
+          <button class="navbar__lang-toggle" (click)="lang.toggle()" [attr.aria-label]="'Switch language'" role="switch" [attr.aria-checked]="lang.isBangla()">
+            <span class="navbar__lang-label" [class.active]="!lang.isBangla()">EN</span>
+            <span class="navbar__lang-track">
+              <span class="navbar__lang-thumb" [class.navbar__lang-thumb--bn]="lang.isBangla()"></span>
+            </span>
+            <span class="navbar__lang-label" [class.active]="lang.isBangla()">বাং</span>
           </button>
 
           <button class="navbar__hamburger" (click)="toggleMenu()"
@@ -101,7 +105,7 @@ import { COMPANY } from '../../data/company.constants';
     .navbar__links a {
       color: var(--color-gray-700);
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: 1.05rem;
       padding: 0.25rem 0;
       border-bottom: 2px solid transparent;
       transition: all var(--transition-fast);
@@ -119,21 +123,62 @@ import { COMPANY } from '../../data/company.constants';
       gap: var(--space-sm);
     }
 
-    .navbar__lang-btn {
-      padding: 0.35rem 0.75rem;
+    .navbar__lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem;
       border-radius: var(--radius-full);
-      font-weight: 700;
-      font-size: 0.8rem;
-      color: var(--color-deep-blue);
       background: var(--color-gray-100);
       border: 1px solid var(--color-gray-200);
+      cursor: pointer;
       transition: all var(--transition-fast);
     }
 
-    .navbar__lang-btn:hover {
-      background: var(--color-teal);
-      color: var(--color-white);
+    .navbar__lang-toggle:hover {
       border-color: var(--color-teal);
+    }
+
+    .navbar__lang-label {
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: var(--color-gray-400);
+      padding: 0 0.25rem;
+      transition: color var(--transition-fast);
+      user-select: none;
+    }
+
+    .navbar__lang-label.active {
+      color: var(--color-deep-blue);
+    }
+
+    .navbar__lang-track {
+      position: relative;
+      width: 34px;
+      height: 18px;
+      background: var(--color-gray-300);
+      border-radius: var(--radius-full);
+      transition: background var(--transition-fast);
+    }
+
+    .navbar__lang-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 14px;
+      height: 14px;
+      background: var(--color-white);
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform var(--transition-fast);
+    }
+
+    .navbar__lang-thumb--bn {
+      transform: translateX(16px);
+    }
+
+    .navbar__lang-toggle:hover .navbar__lang-track {
+      background: var(--color-teal-light);
     }
 
     .navbar__hamburger {

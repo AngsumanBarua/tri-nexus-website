@@ -16,7 +16,7 @@ export const EN: Record<string, string> = {
 
   // Home - Who We Are
   'home.who.title': 'Who We Are',
-  'home.who.text': 'We are a team of 3 software engineers based in Chittagong, building affordable technology solutions for local businesses — shops, markets, groceries, and pharmacies.',
+  'home.who.text': 'Trinexus Technologies is a Chittagong-based software company specializing in custom websites, mobile apps, e-commerce platforms, and business management systems. We deliver affordable, scalable digital solutions for local shops, pharmacies, groceries, restaurants, NGOs, and startups — helping them grow with technology that fits their needs.',
 
   // Home - Free Demo
   'home.demo.title': 'Try Any System Free for 1 Month',
