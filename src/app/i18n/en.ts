@@ -16,7 +16,7 @@ export const EN: Record<string, string> = {
 
   // Home - Who We Are
   'home.who.title': 'Who We Are',
-  'home.who.text': 'We are a team of 3 software engineers based in Chittagong, building affordable technology solutions for local businesses — shops, markets, groceries, and pharmacies.',
+  'home.who.text': 'By combining practical business insights with innovative software development, we create custom web and mobile applications tailored to the unique needs of local businesses. We believe every business deserves access to high-quality technology that is both effective and affordable.',
 
   // Home - Free Demo
   'home.demo.title': 'Try Any System Free for 1 Month',

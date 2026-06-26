@@ -64,26 +64,39 @@ import { SERVICES } from '../../data/services.data';
     }
 
     .services-list {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: var(--space-xl);
+    }
+
+    @media (min-width: 768px) {
+      .services-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .service-card {
       display: flex;
       flex-direction: column;
-      gap: var(--space-lg);
       padding: var(--space-xl);
       background: var(--color-white);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--color-gray-200);
       transition: all var(--transition-normal);
+      height: 100%;
     }
 
     .service-card:hover {
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
       border-color: var(--color-teal);
+      transform: translateY(-4px);
     }
 
     .service-card__icon {
@@ -93,19 +106,29 @@ import { SERVICES } from '../../data/services.data';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--color-gray-50);
+      background: rgba(20, 184, 166, 0.08);
       border-radius: var(--radius-md);
       flex-shrink: 0;
+      margin-bottom: var(--space-md);
+    }
+
+    .service-card__content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .service-card__content h2 {
       font-size: 1.3rem;
       margin-bottom: var(--space-sm);
+      color: var(--color-deep-blue);
     }
 
     .service-card__desc {
       margin-bottom: var(--space-md);
-      line-height: 1.7;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      flex: 1;
     }
 
     .service-card__example {
@@ -129,20 +152,12 @@ import { SERVICES } from '../../data/services.data';
     .service-card__example-text {
       font-style: italic;
       color: var(--color-gray-600);
+      font-size: 0.9rem;
     }
 
-    @media (min-width: 768px) {
-      .service-card {
-        flex-direction: row;
-        align-items: flex-start;
-      }
-
-      .service-card__icon {
-        width: 72px;
-        height: 72px;
-        font-size: 2.8rem;
-        margin-top: 0.25rem;
-      }
+    .service-card__content .btn {
+      margin-top: auto;
+      width: 100%;
     }
   `]
 })
