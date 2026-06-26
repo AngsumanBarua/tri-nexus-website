@@ -11,7 +11,7 @@ import { COMPANY } from '../../data/company.constants';
     <nav class="navbar" [class.navbar--scrolled]="scrolled()" role="navigation" aria-label="Main navigation">
       <div class="navbar__inner container">
         <a routerLink="/" class="navbar__logo" aria-label="Trinexus Technologies Home">
-          <span class="navbar__logo-icon">&#9650;</span>
+          <img [src]="company.logoPath" [alt]="company.name" class="navbar__logo-img" />
           <span class="navbar__logo-text">{{ company.name }}</span>
         </a>
 
@@ -75,16 +75,16 @@ import { COMPANY } from '../../data/company.constants';
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 76px;
     }
 
     .navbar__logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       color: var(--color-deep-blue);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       white-space: nowrap;
     }
 
@@ -92,9 +92,10 @@ import { COMPANY } from '../../data/company.constants';
       color: var(--color-deep-blue);
     }
 
-    .navbar__logo-icon {
-      color: var(--color-teal);
-      font-size: 1.3rem;
+    .navbar__logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
     }
 
     .navbar__links {
@@ -217,7 +218,7 @@ import { COMPANY } from '../../data/company.constants';
     }
 
     /* Mobile slide-in menu */
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       .navbar__links {
         display: flex;
         flex-direction: column;
@@ -246,9 +247,23 @@ import { COMPANY } from '../../data/company.constants';
       }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
+      .navbar__logo {
+        flex: 1 1 auto;
+        min-width: max-content;
+      }
+
       .navbar__links {
         display: flex;
+        justify-content: center;
+        flex: 2 1 auto;
+        gap: var(--space-md);
+      }
+
+      .navbar__actions {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        min-width: max-content;
       }
 
       .navbar__hamburger {

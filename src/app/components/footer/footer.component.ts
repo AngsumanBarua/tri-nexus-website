@@ -14,7 +14,7 @@ import { COMPANY } from '../../data/company.constants';
           <!-- Brand -->
           <div class="footer__brand">
             <div class="footer__logo">
-              <span class="footer__logo-icon">&#9650;</span>
+              <img [src]="company.logoPath" [alt]="company.name" class="footer__logo-img" />
               <span>{{ company.name }}</span>
             </div>
             <p>{{ lang.t('footer.description') }}</p>
@@ -84,9 +84,10 @@ import { COMPANY } from '../../data/company.constants';
       margin-bottom: var(--space-md);
     }
 
-    .footer__logo-icon {
-      color: var(--color-teal);
-      font-size: 1.2rem;
+    .footer__logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
     }
 
     .footer__brand p {
